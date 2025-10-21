@@ -1,0 +1,10 @@
+{
+  "appTitle": "जन सूचना",
+  "selectState": "राज्य निवडा",
+  "selectDistrict": "जिल्हा निवडा",
+  "selectFinancialYear": "आर्थिक वर्ष निवडा",
+  "fetchData": "माहिती मागवा",
+  "totalHouseholdsWorked": "एकूण घरांनी काम केले",
+  "totalIndividualsWorked": "एकूण व्यक्तींनी काम केले",
+  "approvedLabourBudget": "मंजूर कामगार बजेट"
+}

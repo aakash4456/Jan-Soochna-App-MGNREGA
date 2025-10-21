@@ -1,0 +1,10 @@
+{
+  "appTitle": "জন তথ্য",
+  "selectState": "রাজ্য নির্বাচন করুন",
+  "selectDistrict": "জেলা নির্বাচন করুন",
+  "selectFinancialYear": "আর্থিক বছর নির্বাচন করুন",
+  "fetchData": "ডেটা আনুন",
+  "totalHouseholdsWorked": "মোট পরিবার কাজ করেছে",
+  "totalIndividualsWorked": "মোট ব্যক্তি কাজ করেছে",
+  "approvedLabourBudget": "অনুমোদিত শ্রম বাজেট"
+}

@@ -1,0 +1,10 @@
+{
+  "appTitle": "ஜன் சூச்சனா",
+  "selectState": "மாநிலத்தைத் தேர்ந்தெடுக்கவும்",
+  "selectDistrict": "மாவட்டத்தைத் தேர்ந்தெடுக்கவும்",
+  "selectFinancialYear": "நிதி ஆண்டைத் தேர்ந்தெடுக்கவும்",
+  "fetchData": "தரவை பெறவும்",
+  "totalHouseholdsWorked": "மொத்த குடும்பங்கள் வேலை செய்தது",
+  "totalIndividualsWorked": "மொத்த நபர்கள் வேலை செய்தது",
+  "approvedLabourBudget": "அனுமதிக்கப்பட்ட தொழிலாளர் பட்ஜெட்"
+}

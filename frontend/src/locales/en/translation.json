@@ -1,0 +1,10 @@
+{
+  "appTitle": "Jan Soochna",
+  "selectState": "Select State",
+  "selectDistrict": "Select District",
+  "selectFinancialYear": "Select Financial Year",
+  "fetchData": "Fetch Data",
+  "totalHouseholdsWorked": "Total Households Worked",
+  "totalIndividualsWorked": "Total Individuals Worked",
+  "approvedLabourBudget": "Approved Labour Budget"
+}
