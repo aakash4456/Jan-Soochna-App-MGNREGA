@@ -20,6 +20,8 @@ app.get('/api/data', async (req, res) => {
         console.log('Serving from cache');
         return res.json(myCache.get(cacheKey));
     }
+    console.log("backend hit by fetch button");
+    
 
     try {
         console.log('Fetching from API');
@@ -29,7 +31,7 @@ app.get('/api/data', async (req, res) => {
                 'format': 'json',
                 'filters[state_name]': state_name,
                 'filters[fin_year]': fin_year,
-                'filters[district_name]': district_name,
+                // 'filters[district_name]': district_name,
             }
         });
 
@@ -39,6 +41,44 @@ app.get('/api/data', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch data' });
     }
 });
+
+
+// ask for geo location
+app.get('/api/location-from-coords', async (req, res) => {
+    const { lat, lon } = req.query;
+
+    if (!lat || !lon) {
+        return res.status(400).json({ error: 'Latitude and Longitude are required' });
+    }
+
+    const nominatimUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+
+    try {
+        console.log('Fetching location from Nominatim');
+        const response = await axios.get(nominatimUrl, {
+            headers: {
+                // Per Nominatim's usage policy, a custom User-Agent is recommended.
+                'User-Agent': 'JanSoochnaApp/1.0 (your-email@example.com)' 
+            }
+        });
+
+        const address = response.data.address;
+        
+        // Nominatim's response can vary. We look for state and district/county.
+        // The district might be called 'state_district' or 'county'.
+        const locationData = {
+            state: address.state,
+            district: address.state_district || address.county
+        };
+        
+        res.json(locationData);
+
+    } catch (error) {
+        console.error('Nominatim API error:', error.message);
+        res.status(500).json({ error: 'Failed to fetch location data' });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

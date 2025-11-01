@@ -5,7 +5,7 @@ const FilterControls = ({ onFetchData, setFilters, filters }) => {
     const { t } = useTranslation();
 
     // In a real app, this data would come from an API or a static file
-    const states = ["GOA", "MAHARAShtra", "KARNATAKA"]; // Example states for the dropdown
+    const states = ["GOA", "MAHARAShtra", "KARNATAKA", "UTTRAKHAND"]; // Example states for the dropdown
     const years = ["2024-2025", "2023-2024", "2022-2023"]; // Example years
 
     const handleFilterChange = (e) => {
@@ -32,7 +32,7 @@ const FilterControls = ({ onFetchData, setFilters, filters }) => {
             
             {/* Financial Year Dropdown */}
             <select name="fin_year" onChange={handleFilterChange} value={filters.fin_year} className="p-2 border rounded">
-                 <option value="">{t('selectFinancialYear')}</option>
+                <option value="">{t('selectFinancialYear')}</option>
                 {years.map(year => <option key={year} value={year}>{year}</option>)}
             </select>
 
